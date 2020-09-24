@@ -16,10 +16,14 @@ CREATE TABLE "departments" (
      )
 );
 
+SELECT * FROM departments;
+
 CREATE TABLE "dept_manager" (
     "dept_no" VARCHAR   NOT NULL,
     "emp_no" INT   NOT NULL
 );
+
+SELECT * FROM dept_manager;
 
 CREATE TABLE "employees" (
     "emp_no" INT   NOT NULL,
@@ -31,13 +35,17 @@ CREATE TABLE "employees" (
     "hire_date" DATE   NOT NULL
 );
 
+SELECT * FROM employees;
+
 CREATE TABLE "title" (
-    "title_id" VARHCAR   NOT NULL,
+    "title_id" VARCHAR   NOT NULL,
     "title" VARCHAR   NOT NULL,
     CONSTRAINT "pk_title" PRIMARY KEY (
         "title_id"
      )
 );
+
+SELECT * FROM title;
 
 CREATE TABLE "salaries" (
     "emp_no" INT   NOT NULL,
@@ -46,6 +54,9 @@ CREATE TABLE "salaries" (
         "emp_no"
      )
 );
+
+SELECT * FROM salaries;
+
 
 ALTER TABLE "dept_emp" ADD CONSTRAINT "fk_dept_emp_emp_no" FOREIGN KEY("emp_no")
 REFERENCES "salaries" ("emp_no");
